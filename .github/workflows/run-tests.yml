@@ -30,4 +30,5 @@ jobs:
           username: ${{ secrets.DIGITAL_OCEAN_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
       - name: Deploy to Digital Ocean
-        run: sh deploy.sh
+        run: |
+          sudo sh deploy.sh
