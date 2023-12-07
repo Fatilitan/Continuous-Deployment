@@ -24,8 +24,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Set up SSH keys
-        uses: webfactory/ssh-agent@v0.5.0
+        uses: appleboy/ssh-action@master
         with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+          host: ${{ secrets.DIGITAL_OCEAN_SERVER }}
+          username: ${{ secrets.DIGITAL_OCEAN_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
       - name: Deploy to Digital Ocean
         run: sh deploy.sh
