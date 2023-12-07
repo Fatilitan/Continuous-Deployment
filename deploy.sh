@@ -1,5 +1,7 @@
 # Naar de juiste dir
-sudo cd /var/www/farm-site
+cd ~
+
+cd /var/www/farm-site
 
 # Nieuwste code pakken
 git pull
