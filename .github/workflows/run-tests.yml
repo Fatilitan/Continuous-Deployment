@@ -33,5 +33,5 @@ jobs:
             cd ~
             cd /var/www/farm-site
             git pull origin main
-            systemctl restart gunicorn
-            systemctl status
+            systemctl restart farm
+            systemctl status farm
