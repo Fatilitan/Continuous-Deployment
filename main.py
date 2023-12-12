@@ -11,21 +11,21 @@ def calculate():
     if request.method == 'POST':
         num1 = float(request.form['num1'])
         num2 = float(request.form['num2'])
-        operation = request.form['operation']
+        operation = request.form['bewerking']
 
-        if operation == 'add':
+        if operation == 'optellen':
             result = num1 + num2
-        elif operation == 'subtract':
+        elif operation == 'aftrekken':
             result = num1 - num2
-        elif operation == 'multiply':
+        elif operation == 'vermenigvuldigen':
             result = num1 * num2
-        elif operation == 'divide':
+        elif operation == 'delen':
             if num2 != 0:
                 result = num1 / num2
             else:
-                return "Cannot divide by zero!"
+                return "Je kan niet delen door 0!"
         else:
-            return "Invalid operation"
+            return "Kan niet"
 
         return render_template('calculator.html', result=result)
 
