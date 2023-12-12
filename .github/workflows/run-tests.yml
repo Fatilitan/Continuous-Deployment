@@ -29,4 +29,9 @@ jobs:
           host: ${{ secrets.DIGITAL_OCEAN_SERVER }}
           username: ${{ secrets.DIGITAL_OCEAN_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          script: deploy.sh
+          script: |
+            cd ~
+            cd /var/www/farm-site
+            git pull
+            systemctl restart nginx
+            systemctl status
